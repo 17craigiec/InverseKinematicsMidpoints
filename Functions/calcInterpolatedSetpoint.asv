@@ -1,0 +1,11 @@
+function XYZInterpolatedSetpoints = calcInterpolatedSetpoint(positionalMatrix, currTime)
+
+XPos = (positionalMatrix(1,2) - positionalMatrix(1,1))*frac + 
+YPos = 
+ZPos = 
+
+XYZInterpolatedSetpoints(1) = %X Pos
+XYZInterpolatedSetpoints(2) = %Y Pos
+XYZInterpolatedSetpoints(3) = %Z Pos
+end
+
