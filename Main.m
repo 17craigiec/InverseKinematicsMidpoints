@@ -4,7 +4,7 @@ addpath('Functions')
 traj = [0   ,0    ,0    ,0  ; %X pos
         0   ,290  ,100  ,0  ; %Y pos
         160 ,80   ,300  ,200; %Z pos
-        1   ,2    ,3    ,4] ; %Time
+        1   ,2    ,3    ,4] ; %Trajectory Time
 
 [~,trajectories] = size(traj);
 
