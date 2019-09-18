@@ -4,7 +4,7 @@ addpath('Functions')
 traj = [0   ,0    ,0    ,0  ; %X pos
         0   ,290  ,100  ,0  ; %Y pos
         160 ,80   ,300  ,200; %Z pos
-        1   ,2    ,3    ,4] ; %Trajectory Time
+        15  ,30   ,45   ,60] ; %Trajectory Time
 
 [~,trajectories] = size(traj);
 
@@ -25,9 +25,18 @@ for k = 1:trajectories
         %this records current time
         currTime = cputime - timeOffset;
         
-        %Helper2: contstruct 3x1 matrix of interploated set points to
+        %Helper2.1: construct 3x1 matrix of linearly interploated set points to
         %perform perfect linar motion
-        XYZInterpolated = calcInterpolatedSetpoint(positionalMatrix, currTime);
+        %===============================================
+        %XYZInterpolated = calcInterpolatedSetpoint(positionalMatrix, currTime);
+        %===============================================
+        
+        %Helper2.2: construct 3x1 matrix of quartically interpolated set
+        %points to move linarly but fluidly
+        %===============================================
+        XYZInterpolated = InverseKinematicTrajectory(positionalMatrix, currTime);
+        %===============================================
+        
         
         %little arrays used for plotting the output
         %HERE IS WHERE YOU WRITE TO THE ROBOT INSTEAD
